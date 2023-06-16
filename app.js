@@ -8,6 +8,7 @@ const app=express();
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json());
 app.use(cors());
+const PORT=process.env.PORT || 8000;
 
 const notesSchema = new mongoose.Schema({
     title: {
@@ -44,6 +45,6 @@ const notesSchema = new mongoose.Schema({
     res.send(Notee);
 })
 
-app.listen(8000, ()=>{
+app.listen(PORT, ()=>{
     console.log("listning successfully");
 })
